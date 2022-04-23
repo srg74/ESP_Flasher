@@ -61,9 +61,9 @@ jobs:
           echo "::add-matcher::.github/workflows/matchers/pylint.json"
           echo "::add-matcher::.github/workflows/matchers/isort.json"
 
-      - run: flake8 esphomeflasher
+      - run: flake8 esp_flasher
         if: ${{ matrix.id == 'flake8' }}
-      - run: pylint esphomeflasher
+      - run: pylint esp_flasher
         if: ${{ matrix.id == 'pylint' }}
       - run: black --check --diff --color esp_flasher
         if: ${{ matrix.id == 'black' }}
